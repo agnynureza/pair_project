@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Menu </title>
+</head>
+<body>
+    <center>
+        <h1>Order Data</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Addres</th>
+                <th>MedCheckResult</th>
+                <th>Edit Order</th>
+            </tr>
+            </thead>
+            <tbody>
+                <%order.forEach(data =>{
+                {%>
+                <tr>
+                    <td> <%=data.id%> </td>
+                    <td> <%=data.name%> </td>
+                    <td> <%=data.age%> </td>
+                    <td> <%=data.gender%> </td>
+                    <td> <%=data.phonoe%> </td>
+                    <td> <%=data.email%> </td>
+                    <td> <%=data.addres%> </td>
+                    <td align = 'center'> <%=data.medcheckresult%> </td>
+                    <td><a href = '/order/edit/<%=data.id%>'> Edit </a> || <a href = '/order/delete/<%=data.id%>'>Delete </a> <td>
+                </tr>
+                <%}})%>
+            </tbody>
+        </table>
+        </br>
+        <h1>Add New Order Here</h1>
+        <form class= '' action='/order' method = 'post'>
+            <input type ='text' placeholder='name' name='name'>
+            <input type ='text' placeholder='age' name='age'> 
+            <input type ='text' placeholder='gender' name='gender'> 
+            <input type ='text' placeholder='phone' name='phonoe'>
+            <input type ='text' placeholder='email' name='email'>
+            <input type ='text' placeholder='addres' name='addres'>
+            <input type ='text' placeholder='medcheckresult' name='medcheckresult'>
+            <button> Submit Order </button>      
+        </form>
+    </center>
+</body>
+</html>
