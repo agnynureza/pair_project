@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Medical</title>
+</head>
+<body>
+    <h2><center>Edit Medical!!</center></h2>
+    <center>
+    <form class ="" action= "/medicals/edit/<%=edit.id%>" method = "post">
+        <input type = "text" placeholder="cholesterol" value="<%=edit.cholesterol%>" name = "cholesterol">
+        <input type = "text" placeholder="blood_sugar" value="<%=edit.blood_sugar%>" name = "blood_sugar">
+        <input type = "text" placeholder="blood_pressure" value="<%=edit.blood_pressure%>" name = "blood_pressure">
+        <button>ADD</button>
+    </form>
+    </center>
+    
+</body>
+</html>
