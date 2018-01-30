@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu List </title>
+</head>
+<body>
+    <h1>Menu</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Fat</th>
+                <th>Protein</th>
+                <th>Carbohidrate</th>
+                <th>Calories</th>
+                <th>Amount per</th>
+                <th>Edit Menu</th>
+            </tr>
+            </thead>
+            <tbody>
+                <%menu.forEach(data =>{
+                {%>
+                <tr>
+                    <td> <%=data.id%> </td>
+                    <td> <%=data.name%> </td>
+                    <td> <%=data.fat%> </td>
+                    <td> <%=data.protein%> </td>
+                    <td> <%=data.carbohidrate%> </td>
+                    <td> <%=data.calories%> </td>
+                    <td> <%=data.fiber%> </td>
+                    <td><a href = '/listmenu/edit/<%=data.id%>'> Edit </a> || <a href = '/menu/delete/<%=data.id%>'>Delete </a> <td>
+                </tr>
+                <%}})%>
+            </tbody>
+        </table>
+        </br>
+        <h1>Add Menu </h1>
+        <form class= '' action='/listmenu' method = 'post'>
+            <input type ='text' placeholder='name' name='name'>
+            <input type ='text' placeholder='fat' name='fat'> 
+            <input type ='text' placeholder='protein' name='protein'> 
+            <input type ='text' placeholder='carbohidrate' name='carbohidrate'>
+            <input type ='text' placeholder='calories' name='calories'>
+            <input type ='text' placeholder='amount per' name='fiber'>
+            <button> Submit Menu </button>      
+        </form>
+</body>
+</html>
