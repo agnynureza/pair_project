@@ -3,13 +3,14 @@ const app = express()
 const bodyParser = require('body-parser')
 
 const Medical = require('./routes/medical')
+const Index = require('./routes/index')
 // app.get('/', (req, res) => res.send('Hello World!'))
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-
+app.use('/', Index)
 app.use('/medicals', Medical)
 
 

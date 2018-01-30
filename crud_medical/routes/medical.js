@@ -20,8 +20,6 @@ router.post('/add',function(req,res){
         cholesterol: req.body.cholesterol,
         blood_sugar: req.body.blood_sugar,
         blood_pressure: req.body.blood_pressure,
-        gout_level: req.body.gout_level,
-        lactose_intolerance : req.body.lactose_intolerance
     }
     Models.Medical.create(objMed).then(function(dataInput){
         res.redirect('/medicals')
@@ -47,8 +45,6 @@ router.post('/edit/:id',function(req,res){
         cholesterol: req.body.cholesterol,
         blood_sugar: req.body.blood_sugar,
         blood_pressure: req.body.blood_pressure,
-        gout_level: req.body.gout_level,
-        lactose_intolerance : req.body.lactose_intolerance
     }
 
     Models.Medical.update(objMed,{where :{id:id},order:[['id', 'ASC']]}).then(function(editMed){

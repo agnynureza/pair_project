@@ -14,10 +14,8 @@
             <tr>
                 <th>ID</th>
                 <th>Cholesterol</th>
-                <th>Blood_Sugar</th>
-                <th>Blood_Pressure</th>
-                <th>Gout_Level</th>
-                <th>Lactose_Intolerance</th>
+                <th>Blood Sugar</th>
+                <th>Blood Pressure</th>
                 <th>OrderId</th>
             </tr>
         </thead>
@@ -28,8 +26,6 @@
                 <td><%=datamed.cholesterol%></td>
                 <td><%=datamed.blood_sugar%></td>
                 <td><%=datamed.blood_pressure%></td>
-                <td><%=datamed.gout_level%></td>
-                <td><%=datamed.lactose_intolerance%></td>
                 <td><%=datamed.orderId%></td>
                 <td><a href ="/medicals/edit/<%=datamed.id%>">Edit</a></td>
                 <td><a href ="/medicals/delete/<%=datamed.id%>">Delete</a></td>
@@ -45,8 +41,6 @@
         <input type = "text" placeholder="cholesterol" name = "cholesterol">
         <input type = "text" placeholder="blood_sugar" name = "blood_sugar">
         <input type = "text" placeholder="blood_pressure" name = "blood_pressure">
-        <input type = "text" placeholder="gout_level" name = "gout_level">
-        <input type = "text" placeholder="lactose_intolerance" name = "lactose_intolerance">
         <button>ADD</button>
     </form>
     </center>

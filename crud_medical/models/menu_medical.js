@@ -1,9 +1,8 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Medical = sequelize.define('Medical', {
-    cholesterol: DataTypes.STRING,
-    blood_sugar: DataTypes.STRING,
-    blood_pressure: DataTypes.STRING
+  var Menu_medical = sequelize.define('Menu_medical', {
+    menuId: DataTypes.INTEGER,
+    medicalId: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
@@ -11,7 +10,5 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-  
-
-  return Medical;
+  return Menu_medical;
 };
