@@ -17,7 +17,7 @@
                 <th>Phone</th>
                 <th>Email</th>
                 <th>Addres</th>
-                <th>MedCheckResult</th>
+                <th>Medical Report</th>
                 <th>Edit Order</th>
             </tr>
             </thead>
@@ -32,7 +32,7 @@
                     <td> <%=data.phonoe%> </td>
                     <td> <%=data.email%> </td>
                     <td> <%=data.addres%> </td>
-                    <td align = 'center'> <%=data.medcheckresult%> </td>
+                    <td ><a href ='/medicals/<%=data.id%>'>Medical Data </a> </td>
                     <td><a href = '/order/edit/<%=data.id%>'> Edit </a> || <a href = '/order/delete/<%=data.id%>'>Delete </a> <td>
                 </tr>
                 <%}})%>
