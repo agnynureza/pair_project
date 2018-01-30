@@ -5,10 +5,10 @@ const Models = require('../models')
 var router = express.Router();
 
 
-router.get('/:id', function(req, res) {
+router.get('/', function(req, res) {
     // res.send('im the home page!');
     let id = req.params.id  
-    Models.Medical.findById(id).then(function(dataMed){
+    Models.Medical.findAll().then(function(dataMed){
         res.render('medical',{data:dataMed})
     }).catch(function(err){
         console.log(err)

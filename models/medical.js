@@ -15,8 +15,8 @@ module.exports = (sequelize, DataTypes) => {
   });
   Medical.associate = function (models) {
     // ...associate the models
-    // Medical.belongsTo(models.Order);
-};
+    Medical.belongsToMany(models.Menu,{through: 'Menu_medical'});
+  };
   
 
   return Medical;
