@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Medicals </title>
+</head>
+<body>
+    <h1><center>Medical Records List</center></h1>
+    <center>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cholesterol</th>
+                <th>Blood Sugar</th>
+                <th>Blood Pressure</th>
+                <th>OrderId</th>
+            </tr>
+        </thead>
+        <tbody>
+                <%data.forEach(datamed => {%>
+            <tr>
+                <td><%=datamed.id%></td>
+                <td><%=datamed.cholesterol%></td>
+                <td><%=datamed.blood_sugar%></td>
+                <td><%=datamed.blood_pressure%></td>
+                <td><%=datamed.orderId%></td>
+                <td><a href ="/medicals/edit/<%=datamed.id%>">Edit</a></td>
+                <td><a href ="/medicals/delete/<%=datamed.id%>">Delete</a></td>
+            </tr>
+            <%})%>
+        </tbody>
+    </table>
+</center>
+    </br>
+    <center>
+    <h4>Add New</h4>
+    <form class ="" action= "/medicals/add" method = "post">
+        <input type = "text" placeholder="cholesterol" name = "cholesterol" required>
+        <input type = "text" placeholder="blood_sugar" name = "blood_sugar" required>
+        <input type = "text" placeholder="blood_pressure" name = "blood_pressure" required>
+        <button>ADD</button>
+    </form>
+    </center>
+    
+</body>
+</html>
