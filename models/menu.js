@@ -9,46 +9,58 @@ module.exports = (sequelize, DataTypes) => {
     cholesterol: {
       type:DataTypes.STRING,
       validate:{
-        notEmpty: {
-          args: true,
-          msg: 'must be filled !!'
-          },
-        isAlpha:{
-          args:true,
-          msg : 'letter only!'
+        isNull(input,next){
+          if(input.length <1){
+            next('must be filled!!')
+          }else{
+            next()
           }
+        },
+        isGoodBad(value) {
+          if (value != 'good' && value != 'bad') {
+            throw new Error('Only good or bad!')
+          }
+        }
         }
      },
     blood_sugar: {
       type:DataTypes.STRING,
       validate:{
-        notEmpty: {
-          args: true,
-          msg: 'must be filled !!'
-          },
-        isAlpha:{
-          args:true,
-          msg : 'letter only!'
+        isNull(input,next){
+          if(input.length <1){
+            next('must be filled!!')
+          }else{
+            next()
+          }
+        },
+        isGoodBad(value) {
+          if (value != 'good' && value != 'bad') {
+            throw new Error('Only good or bad!')
           }
         }
-      },
+      }
+    },
     blood_pressure:{
       type:DataTypes.STRING,
       validate:{
-        notEmpty: {
-          args: true,
-          msg: 'must be filled !!'
-          },
-        isAlpha:{
-          args:true,
-          msg : 'letter only!'
+        isNull(input,next){
+          if(input.length <1){
+            next('must be filled!!')
+          }else{
+            next()
           }
+        },
+        isGoodBad(value) {
+          if (value != 'good' && value != 'bad') {
+            throw new Error('Only good or bad!')
+          }
+        }
         }
       }
   });
   Menu.associate = function (models) {
     // ...associate the models
-    Menu.belongsToMany(models.Medicals,{through: 'Menu_medical'});
+    // Menu.belongsToMany(models.Medicals,{through: 'Menu_medical'});
   };
   return Menu;
 };

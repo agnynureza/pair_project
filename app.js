@@ -6,6 +6,7 @@ const Medical = require('./routes/medical')
 const Index = require('./routes/index')
 const order = require('./routes/order')
 const menu = require('./routes/menulist')
+const MenuUser = require('./routes/menuUser')
 // app.get('/', (req, res) => res.send('Hello World!'))
 app.set('view engine', 'ejs');
 
@@ -16,6 +17,7 @@ app.use('/', Index)
 app.use('/medicals', Medical)
 app.use('/order',order)
 app.use('/listmenu',menu)
+app.use('/medicals', MenuUser)
 
 
 

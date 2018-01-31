@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu List </title>
+</head>
+<body>
+    <h1>Menu</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Cholesterol</th>
+                <th>Blood Sugar</th>
+                <th>Blood Pressure</th>
+            </tr>
+            </thead>
+            <tbody>
+                <%menu.forEach(data =>{%>
+                <tr>
+                    <td> <%=data.id%> </td>
+                    <td> <%=data.name%> </td>
+                    <td> <%=data.cholesterol%> </td>
+                    <td> <%=data.blood_sugar%> </td>
+                    <td> <%=data.blood_pressure%> </td>
+                </tr>
+                <%})%>
+            </tbody>
+        </table>
+        </br>
+</body>
+</html>
