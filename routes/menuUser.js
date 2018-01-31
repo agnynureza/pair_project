@@ -20,8 +20,8 @@ router.get('/:id/menuUser', function (req, res) {
 //   }).catch(function(err){
 //       res.send(err)
 //   })
-    let id = req.params.id
-    models.Medical.findById(id).then(function(dataOrder){
+    let idMedical = req.params.id
+    models.Medical.findById(idMedical).then(function(dataOrder){
         // console.log(datanya)
         
         models.Menu.findAll().then(function(dataMenu){
@@ -37,13 +37,13 @@ router.get('/:id/menuUser', function (req, res) {
                    arrayMenu.push(dataMenu[i])
                 }  
             }
-            // res.send(array)
-            res.render('menuUser',{menu : arrayMenu})
-        }).catch(function(err1){
-            console.log(err1)
+            // res.send(dataOrder)
+            res.render('menuUser',{menu : arrayMenu, idMedical: idMedical})
+        }).catch(function(errMenu){
+            res.send(errMenu)
         })
-    }).catch(function(err2){
-        console.log(err2)
+    }).catch(function(errOrder){
+        res.send(errOrder)
     })
 
 });

@@ -17,14 +17,17 @@
             </tr>
             </thead>
             <tbody>
-                <%menu.forEach(data =>{%>
-                <tr>
-                    <td> <%=data.id%> </td>
-                    <td> <%=data.name%> </td>
-                    <td> <%=data.cholesterol%> </td>
-                    <td> <%=data.blood_sugar%> </td>
-                    <td> <%=data.blood_pressure%> </td>
-                </tr>
+                <% menu.forEach(dataMenu =>{%>
+                    
+                    <tr>
+                        <td> <%=dataMenu.id%> </td>
+                        <td> <%=dataMenu.name%> </td>
+                        <td> <%=dataMenu.cholesterol%> </td>
+                        <td> <%=dataMenu.blood_sugar%> </td>
+                        <td> <%=dataMenu.blood_pressure%> </td>
+                        <td><a href="/medicals/<%= idMedical %>/menuUser/<%= dataMenu.id %>/checkout">Pick</a> </td>
+                        
+                    </tr>
                 <%})%>
             </tbody>
         </table>
