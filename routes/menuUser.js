@@ -4,22 +4,6 @@ const models = require('../models')
  
 
 router.get('/:id/menuUser', function (req, res) {
-//     let id = req.params.id
-//     // console.log('id nya adalah:',id)
-//     let objMed = {
-//         cholesterol : req.body.cholesterol,
-//         blood_sugar : req.body.blood_sugar,
-//         blood_pressure : req.body.blood_pressure,
-//     }
-//   models.Menu.findAll({
-//       where:{
-//         //   objMed = models.Menu
-//       }
-//   }).then(function(data){
-//       res.render('menuUser',{menu:data})
-//   }).catch(function(err){
-//       res.send(err)
-//   })
     let idMedical = req.params.id
     models.Medical.findById(idMedical).then(function(dataOrder){
         models.Menu.findAll().then(function(dataMenu){
