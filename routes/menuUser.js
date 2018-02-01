@@ -22,13 +22,8 @@ router.get('/:id/menuUser', function (req, res) {
 //   })
     let idMedical = req.params.id
     models.Medical.findById(idMedical).then(function(dataOrder){
-        // console.log(datanya)
-        
         models.Menu.findAll().then(function(dataMenu){
-            // res.send(dataMenu)
-            // res.send(dataMenu[0].name)
             let arrayMenu =[]
-            // console.log(dataMenu.length)
             for(let i =0;i<dataMenu.length;i++){
                 if(dataMenu[i].cholesterol == dataOrder.cholesterol
                     && dataMenu[i].blood_sugar == dataOrder.blood_sugar
