@@ -19,7 +19,6 @@ router.post('/',function(req,res){
         phonoe:req.body.phonoe,
         email:req.body.email,
         addres:req.body.addres,
-        medcheckresult:req.body.medcheckresult
     }
     models.Order.create(obj).then(function(data){
         res.redirect('/order')

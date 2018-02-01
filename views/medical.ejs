@@ -7,8 +7,7 @@
     <title>Medicals </title>
 </head>
 <body>
-    <h1><center>Medical Records List</center></h1>
-    <center>
+    <h1>Medical Records List</h1>
     <table>
         <thead>
             <tr>
@@ -16,34 +15,31 @@
                 <th>Cholesterol</th>
                 <th>Blood Sugar</th>
                 <th>Blood Pressure</th>
-                <th>OrderId</th>
+                <th>Edit Data</th>
             </tr>
         </thead>
         <tbody>
-                <%data.forEach(datamed => {%>
             <tr>
-                <td><%=datamed.id%></td>
-                <td><%=datamed.cholesterol%></td>
-                <td><%=datamed.blood_sugar%></td>
-                <td><%=datamed.blood_pressure%></td>
-                <td><%=datamed.orderId%></td>
-                <td><a href ="/medicals/edit/<%=datamed.id%>">Edit</a></td>
-                <td><a href ="/medicals/delete/<%=datamed.id%>">Delete</a></td>
+                <td><%=dataMed.id%></td>
+                <td><%=dataMed.cholesterol%></td>
+                <td><%=dataMed.blood_sugar%></td>
+                <td><%=dataMed.blood_pressure%></td>
+                <td><a href ="">Edit</a>||<a href ="">Delete</a></td>
             </tr>
-            <%})%>
         </tbody>
     </table>
-</center>
     </br>
-    <center>
-    <h4>Add New</h4>
+    <h3>Add New Medical Report</h3>
     <form class ="" action= "/medicals/add" method = "post">
-        <input type = "text" placeholder="cholesterol" name = "cholesterol" required>
-        <input type = "text" placeholder="blood_sugar" name = "blood_sugar" required>
-        <input type = "text" placeholder="blood_pressure" name = "blood_pressure" required>
-        <button>ADD</button>
+        Cholesterol    :
+        <input type="radio" name="cholesterol" value="good"> good <input type="radio" name="cholesterol" value="bad"> bad <br>
+        Blood Sugar    :
+        <input type="radio" name="blood_sugar" value="good"> good <input type="radio" name="blood_sugar" value="bad"> bad <br>
+        Blood Pressure :
+        <input type="radio" name="blood_pressure" value="good"> good <input type="radio" name="blood_pressure" value="bad"> bad <br>
+        <br>
+        <button>Submit</button>
     </form>
-    </center>
     
 </body>
 </html>

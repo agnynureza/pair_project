@@ -5,19 +5,9 @@ module.exports = (sequelize, DataTypes) => {
     blood_sugar: DataTypes.STRING,
     blood_pressure: DataTypes.STRING,
     orderId: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
-    
   });
-  Medical.associate = function (models) {
-    // ...associate the models
-    // Medical.belongsTo(models.Order);
-};
-  
-
+  // Medical.associate = function (models) {
+  //   Medical.hasMany(models.Order)
+  // };
   return Medical;
 };

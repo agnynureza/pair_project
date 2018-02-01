@@ -8,12 +8,9 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     addres: DataTypes.STRING,
     medcheckresult: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+  // Order.associate = function(models){
+  //   Order.belongsTo(models.Medical)
+  // }
   return Order;
 };
