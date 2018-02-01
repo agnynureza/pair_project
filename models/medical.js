@@ -6,8 +6,10 @@ module.exports = (sequelize, DataTypes) => {
     blood_pressure: DataTypes.STRING,
     orderId: DataTypes.INTEGER
   });
-  // Medical.associate = function (models) {
-  //   Medical.hasMany(models.Order)
-  // };
+  Medical.associate = function (models) {
+    // ...associate the models
+    Medical.belongsToMany(models.Menu,{through: 'Menu_medical'});
+  };
+  
   return Medical;
 };

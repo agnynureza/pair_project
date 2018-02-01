@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu List </title>
+</head>
+<body>
+    <h1>Menu</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Cholesterol</th>
+                <th>Blood Sugar</th>
+                <th>Blood Pressure</th>
+            </tr>
+            </thead>
+            <tbody>
+                <% menu.forEach(dataMenu =>{%>
+                    
+                    <tr>
+                        <td> <%=dataMenu.id%> </td>
+                        <td> <%=dataMenu.name%> </td>
+                        <td> <%=dataMenu.cholesterol%> </td>
+                        <td> <%=dataMenu.blood_sugar%> </td>
+                        <td> <%=dataMenu.blood_pressure%> </td>
+                        <td><a href="/medicals/<%= idMedical %>/menuUser/<%= dataMenu.id %>/checkout">Pick</a> </td>
+                        
+                    </tr>
+                <%})%>
+            </tbody>
+        </table>
+        </br>
+</body>
+</html>

@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "postgres",
-    "password": "bandung",
-    "database": "database_order",
+    "password": "hari2018",
+    "database": "crud_medical",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

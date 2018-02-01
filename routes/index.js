@@ -7,7 +7,7 @@ const router = express.Router()
 //signin
 //.................
 router.get('/', function (req, res) {
-    res.render('signup');
+    res.render('index');
   });
 
   module.exports = router
