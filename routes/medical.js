@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
     // res.send('im the home page!');
     let id = req.params.id  
     Models.Medical.findAll().then(function(dataMed){
-        res.render('medical',{data:dataMed})
+        res.render('medical',{datamed:dataMed})
     }).catch(function(err){
         console.log(err)
     })
@@ -23,6 +23,7 @@ router.post('/add',function(req,res){
         blood_pressure: req.body.blood_pressure
     }
     Models.Medical.create(objMed).then(function(dataInput){
+        // console.log(objMed)
         res.redirect('/medicals')
 
     }).catch(function(err){

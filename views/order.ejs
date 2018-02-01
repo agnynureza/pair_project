@@ -16,26 +16,24 @@
                 <th>Gender</th>
                 <th>Phone</th>
                 <th>Email</th>
-                <th>Addres</th>
-                <th>Medical Report</th>
+                <th>Address</th>
                 <th>Edit Order</th>
             </tr>
             </thead>
             <tbody>
-                <%order.forEach(data =>{
-                {%>
+                <%order.forEach(data =>{%>
                 <tr>
                     <td> <%=data.id%> </td>
                     <td> <%=data.name%> </td>
                     <td> <%=data.age%> </td>
                     <td> <%=data.gender%> </td>
-                    <td> <%=data.phonoe%> </td>
+                    <td> <%=data.phone%> </td>
                     <td> <%=data.email%> </td>
                     <td> <%=data.addres%> </td>
-                    <td ><a href ='/medicals/<%=data.id%>'>Medical Data </a> </td>
+                    <td ><a href ='/medicals'>Medical Data </a> </td>
                     <td><a href = '/order/edit/<%=data.id%>'> Edit </a> || <a href = '/order/delete/<%=data.id%>'>Delete </a> <td>
                 </tr>
-                <%}})%>
+                <%})%>
             </tbody>
         </table>
         </br>
@@ -44,7 +42,7 @@
             <input type ='text' placeholder='name' name='name'>
             <input type ='text' placeholder='age' name='age'> 
             <input type ='text' placeholder='gender' name='gender'> 
-            <input type ='text' placeholder='phone' name='phonoe'>
+            <input type ='text' placeholder='phone' name='phone'>
             <input type ='text' placeholder='email' name='email'>
             <input type ='text' placeholder='addres' name='addres'>
             <button> Submit Order </button>      
