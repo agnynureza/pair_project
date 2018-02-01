@@ -20,7 +20,7 @@ router.post('/add',function(req,res){
     let objMed = {
         cholesterol: req.body.cholesterol,
         blood_sugar: req.body.blood_sugar,
-        blood_pressure: req.body.blood_pressure,
+        blood_pressure: req.body.blood_pressure
     }
     Models.Medical.create(objMed).then(function(dataInput){
         res.redirect('/medicals')
@@ -47,7 +47,6 @@ router.post('/edit/:id',function(req,res){
         blood_sugar: req.body.blood_sugar,
         blood_pressure: req.body.blood_pressure,
     }
-
     Models.Medical.update(objMed,{where :{id:id},order:[['id', 'ASC']]}).then(function(editMed){
         res.redirect('/medicals')
     }).catch(function(err){
