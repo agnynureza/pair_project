@@ -4,10 +4,10 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     age: DataTypes.INTEGER,
     gender: DataTypes.STRING,
-    phonoe: DataTypes.INTEGER,
     email: DataTypes.STRING,
     addres: DataTypes.STRING,
-    medcheckresult: DataTypes.INTEGER
+    medcheckresult: DataTypes.INTEGER,
+    phone: DataTypes.STRING,
   });
   // Order.associate = function(models){
   //   Order.belongsTo(models.Medical)
