@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const router = express.Router()
 const Models = require('../models')
+const bcrypt = require('bcrypt');
 
 //home
 
@@ -36,12 +37,17 @@ router.post('/',function(req,res){
     password:req.body.password
   }
   Models.Login.findOne({where:{email:objData.email}}).then(function(datauser){
-    // console.log(datauser,"ini=======================")
-    if(objData.email == datauser.email && objData.password == datauser.password){
+    // console.log(datauser.password,"-------------------")
+    bcrypt.compare(objData.password, datauser.password).then(function(result) {
+      // console.log(objData.password,"---------------------")
+      // console.log(result,"ini resultttttt")
+      if(objData.email == datauser.email && result){
+      // res == true
       res.redirect('/home')
     }else{
       res.redirect('/')
     }
+    });
   }).catch(function(err){
     res.send(err)
   })
