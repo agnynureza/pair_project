@@ -2,7 +2,19 @@
 const bcrypt = require('bcrypt');
 module.exports = (sequelize, DataTypes) => {
   var Login = sequelize.define('Login', {
-    email: DataTypes.STRING,
+    email: {
+      type      : DataTypes.STRING,
+      validate  : {
+        isEmail   : {msg: `column should be email format`},
+        isNull(value, next) {
+          if(value.length < 1) {
+            next(`email should be filled`)
+          } else {
+            next()
+          }
+        }
+      }
+    },
     password: DataTypes.STRING
   });
   Login.beforeCreate(function(datauser){
