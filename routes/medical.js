@@ -5,18 +5,18 @@ const Models = require('../models')
 var router = express.Router();
 
 
-router.get('/:id', function(req, res) {
+router.get('/', function(req, res) {
     // res.send('im the home page!');
     let id = req.params.id     
-    Models.Order.findById(id).then(function(dataOrd){    
+    // Models.Order.findById(id).then(function(dataOrd){    
         Models.Medical.findAll().then(function(dataMed){
-            res.render('medical',{datamed:dataMed,dataOrd:dataOrd})
+            res.render('medical',{datamed:dataMed})
         }).catch(function(err){
             console.log(err)
         })
-    }).catch(function(err){
-        console.log(err)
-    })
+    // }).catch(function(err){
+    //     console.log(err)
+    // })
 });
 
 router.post('/add',function(req,res){
